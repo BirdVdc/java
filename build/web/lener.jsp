@@ -1,14 +1,10 @@
-<%-- 
-    Document   : spel
-    Created on : Apr 23, 2018, 9:09:01 AM
-    Author     : Maarten
---%>
 <%@page import="fact.it.www.beans.Lener"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <title>Spellen</title>
     </head>
     <body>

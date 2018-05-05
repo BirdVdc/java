@@ -1,10 +1,6 @@
-<%-- 
-    Document   : soort
-    Created on : Apr 16, 2018, 9:26:14 AM
-    Author     : Maarten
---%>
 <%@page import="fact.it.www.beans.Soort"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<link rel="stylesheet" type="text/css" href="style.css">
 <!DOCTYPE html>
 <html>
     <head>

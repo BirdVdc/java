@@ -1,23 +1,18 @@
-<%-- 
-    Document   : index
-    Created on : Apr 16, 2018, 9:23:23 AM
-    Author     : Maarten
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <title>Spellen</title>
     </head>
     <body>
         <form action="ManageServlet">
         <h1>Spellen - Sam Rutten</h1>
-        <p><input type="submit" value="Toon eerste spelsoort" name="tooneerstespelsoort"/></p>
-        <p><input type="submit" value="Toon het vijfde spel" name="toonhetvijfdespel"/></p>
+        <p><input type="submit" value="Toon eerste spelsoort" name="EersteSpelsoort"/></p>
+        <p><input type="submit" value="Toon het vijfde spel" name="VijfdeSpel"/></p>
         <p><a href="ManageServlet?gekozen=lener">eerste lener</a></p>
-        <p><input type="text" name="spelnaarkeuze" size="5"/><input type="submit" value="Toon een spel naar keuze" name="tooneenspelnaarkeuze"/></p>
+        <p><input type="submit" value="Toon een spel naar keuze" name="SpelNaarKeuzeKnop"/><input id="textvak" type="text" name="SpelNaarKeuze" size="10"/></p>
         <form/>
     </body>
 </html>

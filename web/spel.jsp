@@ -1,10 +1,6 @@
-<%-- 
-    Document   : spel
-    Created on : Apr 23, 2018, 9:09:01 AM
-    Author     : Maarten
---%>
 <%@page import="fact.it.www.beans.Spel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<link rel="stylesheet" type="text/css" href="style.css">
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,5 +13,10 @@
         <p><%=spel.toString()%></p>
         <img src="images/<%=spel.getAfbeelding()%>" alt="<%=spel.getNaam()%>"/>
         <p><a href="index.jsp">Terug naar hoofdpagina</a></p>
+        <br/>
+        <br/>
+        
+        
+        
     </body>
 </html>

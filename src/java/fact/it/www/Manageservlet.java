@@ -65,11 +65,11 @@ public class Manageservlet extends HttpServlet {
            RequestDispatcher rd = null;
            String gekozen = request.getParameter("gekozen");
            
-        if (request.getParameter("tooneerstespelsoort") !=null){
+        if (request.getParameter("EersteSpelsoort") !=null){
             Soort soort = dasoort.getSoort();
             request.setAttribute("soort", soort);
             rd = request.getRequestDispatcher("soort.jsp");
-        }else if(request.getParameter("toonhetvijfdespel") !=null){
+        }else if(request.getParameter("VijfdeSpel") !=null){
             Spel spel = daspel.getSpel();
             request.setAttribute("spel", spel);
             rd = request.getRequestDispatcher("spel.jsp");
@@ -77,6 +77,8 @@ public class Manageservlet extends HttpServlet {
             Lener lener = dalener.getLener();
             request.setAttribute("lener", lener);
             rd = request.getRequestDispatcher("lener.jsp");
+        }else if(request.getParameter("SpelNaarKeuze") != null){
+            //???
         }
         rd.forward(request, response);
     }
