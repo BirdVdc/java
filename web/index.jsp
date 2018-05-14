@@ -13,6 +13,7 @@
         <p><input type="submit" value="Toon het vijfde spel" name="VijfdeSpel"/></p>
         <p><a href="ManageServlet?gekozenSpel=lener">eerste lener</a></p>
         <p><input type="submit" value="Toon een spel naar keuze" name="SpelNaarKeuzeKnop"/><input id="textvak" type="text" name="SpelNaarKeuze" size="10"/></p>
+        <p><input type="submit" value="Overzicht spellen" name="overzichtTonen"/></p>
         <form/>
     </body>
 </html>

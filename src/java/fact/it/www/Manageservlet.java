@@ -13,6 +13,7 @@ import fact.it.www.dataaccess.DASpel;
 import fact.it.www.dataaccess.DALener;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
@@ -77,15 +78,31 @@ public class Manageservlet extends HttpServlet {
             request.setAttribute("spel", spel);
             rd = request.getRequestDispatcher("spel.jsp");
             
-        }else if(gekozenSpel.equals("lener")){
+        }else if(gekozenSpel != null && gekozenSpel.equals("lener")){
             Lener lener = dalener.getLener();
             request.setAttribute("lener", lener);
             rd = request.getRequestDispatcher("lener.jsp");
             
             
-        }else if(request.getParameter("SpelNaarKeuze") != null){
-            String SpelNaarKeuze = request.getParameter("SpelNaarKeuze");
+        }else if(request.getParameter("SpelNaarKeuzeKnop") != null){
+            String SpelNaarKeuze = request.getParameter("SpelNaarKeuze").toLowerCase();
             Spel spel = daspel.getSpelNaarKeuze(SpelNaarKeuze);
+            request.setAttribute("spel", spel);
+             rd = request.getRequestDispatcher("spel.jsp");
+             
+             
+             
+        }else if(request.getParameter("overzichtTonen") != null){
+            Spel spel = daspel.getSpel();
+            ArrayList<Spel> spellen = daspel.getSpellen();
+            request.setAttribute("spel", spel);
+            rd = request.getRequestDispatcher("overzichtSpellen.jsp");     
+             
+             
+        }else{
+            String foutboodschap = "Geen spel gevonden";            
+            request.setAttribute("foutboodschap", foutboodschap);
+            rd= request.getRequestDispatcher("fout.jsp");
         }
         rd.forward(request, response);
     }
