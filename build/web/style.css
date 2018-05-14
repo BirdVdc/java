@@ -40,3 +40,6 @@ a:hover {
 #textvak{
     margin-left: 15px;
 }
+th, td {
+    padding-left: 15px;
+}
