@@ -95,7 +95,7 @@ public class Manageservlet extends HttpServlet {
         }else if(request.getParameter("overzichtTonen") != null){
             Spel spel = daspel.getSpel();
             ArrayList<Spel> spellen = daspel.getSpellen();
-            request.setAttribute("spel", spel);
+            request.setAttribute("spellen", spellen);
             rd = request.getRequestDispatcher("overzichtSpellen.jsp");     
              
              
