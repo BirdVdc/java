@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Maarten
+ * @author Sam
  */
 @WebServlet(name = "ManageServlet", urlPatterns = {"/ManageServlet"}, initParams = {
     @WebInitParam(name = "url",value = "jdbc:oracle:thin:@localhost:1521:XE"),
@@ -63,22 +63,29 @@ public class Manageservlet extends HttpServlet {
             throws ServletException, IOException {
         
            RequestDispatcher rd = null;
-           String gekozen = request.getParameter("gekozen");
+           String gekozenSpel = request.getParameter("gekozenSpel");
+           
            
         if (request.getParameter("EersteSpelsoort") !=null){
             Soort soort = dasoort.getSoort();
             request.setAttribute("soort", soort);
             rd = request.getRequestDispatcher("soort.jsp");
+            
+            
         }else if(request.getParameter("VijfdeSpel") !=null){
             Spel spel = daspel.getSpel();
             request.setAttribute("spel", spel);
             rd = request.getRequestDispatcher("spel.jsp");
-        }else if(gekozen.equals("lener")){
+            
+        }else if(gekozenSpel.equals("lener")){
             Lener lener = dalener.getLener();
             request.setAttribute("lener", lener);
             rd = request.getRequestDispatcher("lener.jsp");
+            
+            
         }else if(request.getParameter("SpelNaarKeuze") != null){
-            //???
+            String SpelNaarKeuze = request.getParameter("SpelNaarKeuze");
+            Spel spel = daspel.getSpelNaarKeuze(SpelNaarKeuze);
         }
         rd.forward(request, response);
     }

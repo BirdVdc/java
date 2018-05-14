@@ -7,7 +7,7 @@ package fact.it.www.beans;
 
 /**
  *
- * @author Maarten
+ * @author Sam
  */
 public class Soort {
     private int nr;

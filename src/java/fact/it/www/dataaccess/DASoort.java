@@ -13,7 +13,7 @@ import java.sql.Statement;
 
 /**
  *
- * @author Maarten
+ * @author Sam
  */
     public class DASoort {
     private final String url, login, password;
