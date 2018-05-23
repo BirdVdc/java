@@ -23,6 +23,12 @@ public class Spel {
     private int moeilijkheidnr;
     private double prijs;
     private String afbeelding;
+    
+    
+    //Toevoegen van soort
+    private Soort soortnaam;
+    //Toevoegen van Moeilijkheid
+    private Moeilijkheid moeilijkheidnaam;
 
     public Spel() {
     }
@@ -131,6 +137,23 @@ public class Spel {
         this.afbeelding = afbeelding;
     }
 
+    public Soort getSoortnaam() {
+        return soortnaam;
+    }
+
+    public void setSoortnaam(Soort soortnaam) {
+        this.soortnaam = soortnaam;
+    }
+
+    public Moeilijkheid getMoeilijkheidnaam() {
+        return moeilijkheidnaam;
+    }
+
+    public void setMoeilijkheidnaam(Moeilijkheid moeilijkheidnaam) {
+        this.moeilijkheidnaam = moeilijkheidnaam;
+    }
+
+   
     @Override
     public String toString() {
         return "Spel{" + "nr=" + nr + ", naam=" + naam + ", uitgever=" + uitgever + ", auteur=" + auteur + ", jaar_uitgifte=" + jaar_uitgifte + ", leeftijd=" + leeftijd + ", min_spelers=" + min_spelers + ", max_spelers=" + max_spelers + ", soortnr=" + soortnr + ", speelduur=" + speelduur + ", moeilijkheidnr=" + moeilijkheidnr + ", prijs=" + prijs + ", afbeelding=" + afbeelding + '}';

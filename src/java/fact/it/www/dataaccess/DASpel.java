@@ -5,6 +5,8 @@
  */
 package fact.it.www.dataaccess;
 
+import fact.it.www.beans.Moeilijkheid;
+import fact.it.www.beans.Soort;
 import fact.it.www.beans.Spel;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -53,6 +55,8 @@ public class DASpel {
                 spel.setMoeilijkheidnr(resultSet.getInt("moeilijkheidnr"));
                 spel.setPrijs(resultSet.getDouble("prijs"));
                 spel.setAfbeelding(resultSet.getString("afbeelding"));
+                
+                        
             }
 
         } catch (Exception e) {
@@ -148,6 +152,17 @@ public class DASpel {
                 spel.setMoeilijkheidnr(resultSet.getInt("moeilijkheidnr"));
                 spel.setPrijs(resultSet.getDouble("prijs"));
                 spel.setAfbeelding(resultSet.getString("afbeelding"));
+                
+                //relatie soort
+                Soort soort = new Soort();
+                soort.setSoortnaam(resultSet.getString("soortnaam"));
+
+                spel.setSoortnaam(soort);
+                
+                //relatie moeilijkheid
+                Moeilijkheid moeilijkheid = new Moeilijkheid();
+                moeilijkheid.setMoeilijkheidNaam(resultSet.getString("moeilijkheidNaam"));
+                spel.setMoeilijkheidnaam(moeilijkheid);
             }
 
         } catch (Exception e) {

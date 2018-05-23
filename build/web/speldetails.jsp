@@ -10,12 +10,14 @@
     <body>
         <%Spel spel = (Spel) request.getAttribute("spel");%>
         <h1><%=spel.getNaam()%></h1>
-        <p><%=spel.getAuteur()%></p>
+        <p>Auteur: <%=spel.getAuteur()%></p>
         <p>Jaar uitgifte: <%=spel.getJaar_uitgifte()%></p>
         <p>Leeftijd: <%=spel.getLeeftijd()%></p>
         <p>Max aantal spelers: <%=spel.getMax_spelers()%></p>
         <p>Min aantal spelers: <%=spel.getMin_spelers()%></p>
         <p>Speelduur: <%=spel.getSpeelduur()%></p>
+        <p>Soort: <%=spel.getSoortnaam()%></p>
+        <p>Moeilijkheid: <%=spel.getMoeilijkheidnaam()%></p>
        <img src="images/<%=spel.getAfbeelding()%>" alt="<%=spel.getNaam()%>"/>
         <p><a href="index.jsp">Terug naar hoofdpagina</a></p>
     </body>
