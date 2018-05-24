@@ -10,7 +10,7 @@
     <body>
         <%Spel spel = (Spel) request.getAttribute("spel");%>
         <h1><%=spel.getNaam()%></h1>
-        <p>Auteur: <%=spel.getAuteur()%></p>
+        <p>Uitgever: <%=spel.getUitgever()%></p>
         <p>Jaar uitgifte: <%=spel.getJaar_uitgifte()%></p>
         <p>Leeftijd: <%=spel.getLeeftijd()%></p>
         <p>Max aantal spelers: <%=spel.getMax_spelers()%></p>

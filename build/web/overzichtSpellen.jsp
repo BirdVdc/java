@@ -24,7 +24,7 @@
             <tr>
                 <td><a href="ManageServlet?naam=<%=spel.getNaam()%>"><%=spel.getNaam()%></a></td>
                 <td><%=spel.getUitgever()%></td>
-                <td><%=spel.getPrijs()%></td>
+                <td><%=spel.getPrijs()%>€</td>
                 
             </tr>
             <%}%>

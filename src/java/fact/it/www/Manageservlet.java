@@ -11,6 +11,7 @@ import fact.it.www.beans.Spel;
 import fact.it.www.dataaccess.DASoort;
 import fact.it.www.dataaccess.DASpel;
 import fact.it.www.dataaccess.DALener;
+import fact.it.www.dataaccess.DAMoeilijkheid;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -38,6 +39,9 @@ public class Manageservlet extends HttpServlet {
     private DASoort dasoort = null;
     private DASpel daspel = null;
     private DALener dalener = null;
+    private DAMoeilijkheid damoeilijkheid = null;
+    
+    
     
     @Override
     public void init() throws ServletException {
@@ -55,18 +59,21 @@ public class Manageservlet extends HttpServlet {
             if (dalener == null) {
                 dalener = new DALener(url, login, password, driver);
             }
+            if(damoeilijkheid == null){
+               damoeilijkheid = new DAMoeilijkheid (url, login, password, driver);
+            }
         } catch (ClassNotFoundException e) {
             throw new ServletException(e);
         }
     }
 
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-           RequestDispatcher rd = null;
-           String gekozenSpel = request.getParameter("gekozenSpel");
-           
-           
+    RequestDispatcher rd = null;
+    String gekozenSpel = request.getParameter("gekozenSpel");
+    
         if (request.getParameter("EersteSpelsoort") !=null){
             Soort soort = dasoort.getSoort();
             request.setAttribute("soort", soort);
@@ -77,6 +84,7 @@ public class Manageservlet extends HttpServlet {
             Spel spel = daspel.getSpel();
             request.setAttribute("spel", spel);
             rd = request.getRequestDispatcher("spel.jsp");
+            
             
         }else if(gekozenSpel != null && gekozenSpel.equals("lener")){
             Lener lener = dalener.getLener();
@@ -89,14 +97,14 @@ public class Manageservlet extends HttpServlet {
             Spel spel = daspel.getSpelNaarKeuze(SpelNaarKeuze);
             request.setAttribute("spel", spel);
              rd = request.getRequestDispatcher("spel.jsp");
-             
-             
+                          
              
         }else if(request.getParameter("overzichtTonen") != null){
             Spel spel = daspel.getSpel();
             ArrayList<Spel> spellen = daspel.getSpellen();
             request.setAttribute("spellen", spellen);
             rd = request.getRequestDispatcher("overzichtSpellen.jsp");
+            
             
             
         }else if(request.getParameter("naam") != null){
@@ -109,7 +117,8 @@ public class Manageservlet extends HttpServlet {
             String foutboodschap = "Geen spel gevonden";            
             request.setAttribute("foutboodschap", foutboodschap);
             rd= request.getRequestDispatcher("fout.jsp");
-        }
+        }     
+        
         rd.forward(request, response);
     }
 
